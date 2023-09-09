@@ -68,21 +68,22 @@ get_header(); ?>
 	<div id="carouselExample" class="carousel slide">
 		<div class="carousel-inner">
 			<div class="carousel-item active">
-			    <img src="https://museo.ar/wp-content/uploads/2023/04/carousel-1-scaled.jpg" class="d-block w-100" alt="...">
+			    <img src="https://museo.ar/wp-content/uploads/2023/09/sala_0000_01_waifu2x_photo_noise1_scale.jpg" class="d-block w-100" alt="...">
 			    <div class="carousel-caption">
-                    <p class="text-center">
-                        <button class="btn btn-primary">
-                            test
-                        </button>
-                    </p>
                 </div>
 			</div>
 			<div class="carousel-item">
-			    <img src="https://museo.ar/wp-content/uploads/2023/04/carousel-2-scaled.jpg" class="d-block w-100" alt="...">
-			    <div class="carousel-caption">
+			    <img src="https://museo.ar/wp-content/uploads/2023/09/sala_0001_02_waifu2x_photo_noise1_scale.jpg" class="d-block w-100" alt="...">
+			</div>
+            <div class="carousel-item">
+			    <img src="https://museo.ar/wp-content/uploads/2023/09/sala_0002_03_waifu2x_photo_noise1_scale.jpg" class="d-block w-100" alt="...">
+			    <!-- <div class="carousel-caption">
                     <h5>First slide label</h5>
                     <p>Some representative placeholder content for the first slide.</p>
-                </div>
+                </div> -->
+			</div>
+            <div class="carousel-item">
+			    <img src="https://museo.ar/wp-content/uploads/2023/09/sala_0003_04_waifu2x_photo_noise1_scale.jpg" class="d-block w-100" alt="...">
 			</div>
 		</div>
 		<button class="carousel-control-prev" type="button" data-bs-target="#carouselExample" data-bs-slide="prev">

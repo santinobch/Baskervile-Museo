@@ -400,6 +400,8 @@ body a {
 	font-family: 'Roboto Slab', sans-serif;
 	font-size: 0.9em; 
 	text-align: center;
+	display: flex;
+	align-items: center;
 }
 
 .main-menu li { position: relative; }
@@ -3187,4 +3189,10 @@ img#wpstats { display: none; } /* Silly WordPress stats */
 
 body {
     overflow-x: hidden;
+}
+
+/*	HEADER	*/
+
+.logo-in-list::before {
+	content: '' !important;
 }

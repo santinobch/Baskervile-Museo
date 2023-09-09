@@ -27,59 +27,12 @@
 		?>
 
 		<a class="skip-link button" href="#site-content"><?php _e( 'Skip to the content', 'baskerville' ); ?></a>
-	
-		<div class="header section small-padding bg-dark bg-image" style="background-image: url( <?php echo esc_url( $background_image_url ); ?> );">
+
 		
-			<div class="cover"></div>
-			
-			<div class="header-search-block bg-graphite hidden">
-				<?php get_search_form(); ?>
-			</div><!-- .header-search-block -->
-					
-			<div class="header-inner section-inner">
-			
-				<?php 
-
-				$custom_logo_id 	= get_theme_mod( 'custom_logo' );
-				$legacy_logo_url 	= get_theme_mod( 'baskerville_logo' );
-				$blog_title_elem 	= ( ( is_front_page() || is_home() ) && ! is_page() ) ? 'h1' : 'div';
-				$blog_title_class 	= $custom_logo_id ? 'blog-logo' : 'blog-title';
-
-				$blog_title 		= get_bloginfo( 'title' );
-				$blog_description 	= get_bloginfo( 'description' );
-
-				if ( $custom_logo_id  || $legacy_logo_url ) : 
-
-					$custom_logo_url = $custom_logo_id ? wp_get_attachment_image_url( $custom_logo_id, 'full' ) : $legacy_logo_url;
-				
-					?>
-
-					<<?php echo $blog_title_elem; ?> class="<?php echo esc_attr( $blog_title_class ); ?>">
-						<a class="logo" href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home">
-							<img src="<?php echo esc_url( $custom_logo_url ); ?>">
-							<span class="screen-reader-text"><?php echo $blog_title; ?></span>
-						</a>
-					</<?php echo $blog_title_elem; ?>>
-		
-				<?php elseif ( $blog_description || $blog_title ) : ?>
-
-					<<?php echo $blog_title_elem; ?> class="<?php echo esc_attr( $blog_title_class ); ?>">
-						<a href="<?php echo esc_url( home_url() ); ?>" rel="home"><?php echo $blog_title; ?></a>
-					</<?php echo $blog_title_elem; ?>>
-				
-					<?php if ( $blog_description ) : ?>
-						<h3 class="blog-description"><?php echo $blog_description; ?></h3>
-					<?php endif; ?>
-				
-				<?php endif; ?>
-							
-			</div><!-- .header-inner -->
-						
-		</div><!-- .header -->
 		
 		<div class="navigation section no-padding bg-dark">
 		
-			<div class="navigation-inner section-inner">
+			<div class="navigation-inner section-inner" style="display: flex; align-items: center; justify-content: space-between;">
 			
 				<button class="nav-toggle toggle fleft hidden">
 					
@@ -88,8 +41,35 @@
 					<div class="bar"></div>
 					
 				</button>
+
+				<?php 
+
+				$custom_logo_id 	= get_theme_mod( 'custom_logo' );
+				$legacy_logo_url 	= get_theme_mod( 'baskerville_logo' );
+
+				$blog_title 		= get_bloginfo( 'title' );
+
+				if ( $custom_logo_id  || $legacy_logo_url ) : 
+
+					$custom_logo_url = $custom_logo_id ? wp_get_attachment_image_url( $custom_logo_id, 'full' ) : $legacy_logo_url;
+				
+					?>
+
+					<a class="nav-toggle logo hidden" style="padding: 0;" href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home">
+						<img style="height: 50px;" src="<?php echo esc_url( $custom_logo_url ); ?>">
+						<span class="screen-reader-text"><?php echo $blog_title; ?></span>
+					</a>
+
+				<?php endif; ?>
 						
 				<ul class="main-menu">
+
+					<li class="menu-item logo-in-list">
+						<a href="https://museo.ar/" style="width: max-content;" aria-current="page">
+							<img style="height: 50px;" src="<?php echo esc_url( $custom_logo_url ); ?>">
+							<span class="screen-reader-text"><?php echo $blog_title; ?></span>
+						</a>
+					</li>
 				
 					<?php 
 					
@@ -119,9 +99,9 @@
 											
 				</ul><!-- .main-menu -->
 				 
-				<button class="search-toggle toggle fright">
+				<!-- <button class="search-toggle toggle fright">
 					<span class="screen-reader-text"><?php _e( 'Toggle search field', 'baskerville' ); ?></span>
-				</button>
+				</button> -->
 				 
 				<div class="clear"></div>
 				 
